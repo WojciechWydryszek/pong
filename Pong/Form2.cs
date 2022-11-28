@@ -6,6 +6,8 @@ namespace Pong
 {
     public partial class Form2 : Form
     {
+        Timer myTimer = new Timer();
+
         static Boolean startBall,
                        onePLayer;
                 
@@ -14,6 +16,7 @@ namespace Pong
                    ballY,
                    pointsPlayer,
                    pointsBot;
+
 
         public Form2() // constructor for restart game
         {
@@ -87,7 +90,6 @@ namespace Pong
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            Timer myTimer = new Timer();
             myTimer.Start();
 
             Point positionBot = panel2.Location,
@@ -120,7 +122,6 @@ namespace Pong
                 {
                     PicBoxBall.Left = 434;
                     ballX = -ballX;
-                    ballX += 1;
                     pointsBot++;
                     startBall = false;
                     winner();
@@ -130,7 +131,6 @@ namespace Pong
                 {
                     PicBoxBall.Left = 434;
                     ballX = -ballX;
-                    ballX += 1;
                     pointsPlayer++;
                     startBall = false;
                     winner();

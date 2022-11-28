@@ -63,6 +63,16 @@ namespace Pong.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _348_3484341_signos_de_interrogacin_signo_de_pregunta_fondo_azul {
+            get {
+                object obj = ResourceManager.GetObject("348-3484341_signos-de-interrogacin-signo-de-pregunta-fondo-azul", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Ski_trail_rating_symbol_black_circle {
             get {
                 object obj = ResourceManager.GetObject("Ski_trail_rating_symbol_black_circle", resourceCulture);

@@ -10,3 +10,4 @@ C:\Users\10030110\Desktop\Pong\Pong\obj\Debug\Pong.exe
 C:\Users\10030110\Desktop\Pong\Pong\obj\Debug\Pong.pdb
 C:\Users\10030110\Desktop\Pong\Pong\obj\Debug\Pong.Form2.resources
 C:\Users\10030110\Desktop\Pong\Pong\obj\Debug\Pong.Form3.resources
+C:\Users\10030110\Desktop\Pong\Pong\obj\Debug\Pong.Controls.resources
