@@ -1,6 +1,6 @@
 ﻿namespace Pong
 {
-    partial class Form3
+    partial class Winner
     {
         /// <summary>
         /// Required designer variable.

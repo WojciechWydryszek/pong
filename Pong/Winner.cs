@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace Pong
 {
-    public partial class Form3 : Form
+    public partial class Winner : Form
     {
-        public Form3(String text)
+        public Winner(String text)
         {
             InitializeComponent();
             label1.Text = text;
@@ -13,14 +13,14 @@ namespace Pong
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Form2 form = new Form2();
+            Game form = new Game();
             form.Show();
             this.Close();
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            Form1 form = new Form1();
+            Home form = new Home();
             form.Show();
             this.Close();
         }

@@ -1,6 +1,6 @@
 ﻿namespace Pong
 {
-    partial class Form2
+    partial class Game
     {
         /// <summary>
         /// Required designer variable.
@@ -42,7 +42,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(12, 45);
+            this.panel1.Location = new System.Drawing.Point(12, 250);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(34, 143);
             this.panel1.TabIndex = 0;
@@ -102,11 +102,11 @@
             this.marcador2.TabIndex = 6;
             this.marcador2.Text = "0";
             // 
-            // Form2
+            // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(928, 574);
+            this.ClientSize = new System.Drawing.Size(928, 639);
             this.Controls.Add(this.marcador2);
             this.Controls.Add(this.marcador1);
             this.Controls.Add(this.label1);
@@ -114,7 +114,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form2";
+            this.Name = "Game";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             ((System.ComponentModel.ISupportInitialize)(this.PicBoxBall)).EndInit();
