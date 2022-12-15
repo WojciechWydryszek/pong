@@ -9,7 +9,8 @@ namespace Pong
         Timer myTimer = new Timer();
 
         private static Boolean startBall,
-                               onePLayer;
+                               onePLayer,
+                               pause;
                 
         private static int speedBot,
                            ballX,
@@ -41,67 +42,85 @@ namespace Pong
                 speedBot = 2;
             else if (difficulty == 2)
                 speedBot = 5;
-            if (difficulty == 3)
+            else if(difficulty == 3)
+                speedBot = 9;
+            else if(difficulty == 4)
                 speedBot = 9;
             ballX = -5;
             ballY = 5;
             pointsPlayer = 0;
             pointsBot = 0;
+            pause = false;
             startBall = false;
+            label3.Visible = false;
         }
-       
-
-        public class controls
-        {
-            private Keys key;
-            private Point postionPlayer, positionBot;
-            controls() { }
-            controls(Keys key, Point postionPlayer, Point positionBot)
-            {
-                this.key = key;
-                this.postionPlayer = postionPlayer;
-                this.positionBot = positionBot;
-            }
-
-        }
-        
-
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData) // overide medoth for keyboard load
         {
             Point positionPlayer = panel1.Location,
                   positionBot = panel2.Location;
 
-            if (keyData != Keys.Enter && keyData.ToString().Equals("W") && positionPlayer.Y >= topMoviment) // player 1 controls
+            if (pause)
             {
-                panel1.Location = new Point(positionPlayer.X, positionPlayer.Y - 15);
-                
-                return base.ProcessCmdKey(ref msg, keyData);
-            }
-            if (keyData != Keys.Enter && keyData.ToString().Equals("S") && positionPlayer.Y <= botMoviment)
-            { 
-                panel1.Location = new Point(positionPlayer.X, positionPlayer.Y + 15);
-                
-                return base.ProcessCmdKey(ref msg, keyData);
-            }
-            if (!onePLayer)
-            {
-                if (keyData != Keys.Enter && keyData.ToString().Equals("Up") && positionBot.Y >= topMoviment) // player 2 controls, just in mode 2 players
+                if (keyData != Keys.Enter && keyData.ToString().Equals("Escape"))
                 {
-                    panel2.Location = new Point(positionBot.X, positionBot.Y - 15);
-                    
-                    return base.ProcessCmdKey(ref msg, keyData);
+                    Home home = new Home();
+                    home.Show();
+                    this.Close();
+                }
+            }
 
-                } if (keyData != Keys.Enter && keyData.ToString().Equals("Down") && positionBot.Y <= botMoviment)
+            if (keyData != Keys.Enter && keyData.ToString().Equals("Escape"))
+            {
+                startBall = false;
+                timer1.Stop();
+                label1.Visible = true;
+                pause = true;
+                label2.Visible = true;
+                label3.Visible = true;
+            }
+            if (!pause)
+            {
+
+                if (keyData != Keys.Enter && keyData.ToString().Equals("W") && positionPlayer.Y >= topMoviment) // player 1 controls
                 {
-                    panel2.Location = new Point(positionBot.X, positionBot.Y + 15);
-                    
+                    panel1.Location = new Point(positionPlayer.X, positionPlayer.Y - 15);
+
                     return base.ProcessCmdKey(ref msg, keyData);
                 }
-            } if (keyData == Keys.Enter) // press entre for star round
+                if (keyData != Keys.Enter && keyData.ToString().Equals("S") && positionPlayer.Y <= botMoviment)
+                {
+                    panel1.Location = new Point(positionPlayer.X, positionPlayer.Y + 15);
+
+                    return base.ProcessCmdKey(ref msg, keyData);
+                }
+                if (!onePLayer)
+                {
+                    if (keyData != Keys.Enter && keyData.ToString().Equals("Up") && positionBot.Y >= topMoviment) // player 2 controls, just in mode 2 players
+                    {
+                        panel2.Location = new Point(positionBot.X, positionBot.Y - 15);
+
+                        return base.ProcessCmdKey(ref msg, keyData);
+
+                    }
+                    if (keyData != Keys.Enter && keyData.ToString().Equals("Down") && positionBot.Y <= botMoviment)
+                    {
+                        panel2.Location = new Point(positionBot.X, positionBot.Y + 15);
+
+                        return base.ProcessCmdKey(ref msg, keyData);
+                    }
+                }
+
+            }
+
+            if (keyData == Keys.Enter) // press entre for star round
             {
                 startBall = true;
                 label1.Visible = false;
+                timer1.Start();
+                pause = false;
+                label2.Visible = false;
+                label3.Visible = false;
             }
                 return true;
         }
@@ -117,10 +136,27 @@ namespace Pong
 
             if (onePLayer)
             {
-                panel2.Location = new Point(positionBot.X, positionBot.Y + speedBot);
-                if (panel2.Top < topMoviment || panel2.Top > botMoviment)
+                if (difficulty == 4)
                 {
-                    speedBot = -speedBot;
+                    if (ballPosition.Y >= 550)
+                    {
+                        panel2.Location = new Point(positionBot.X, positionBot.Y = positionBot.Y);
+                    } else if (ballPosition.Y <= 110)
+                    {
+                        panel2.Location = new Point(positionBot.X, positionBot.Y = positionBot.Y);
+                    }
+                    else
+                    {
+                        panel2.Location = new Point(positionBot.X, ballPosition.Y - 50);
+                    }
+                }
+                else
+                {
+                    panel2.Location = new Point(positionBot.X, positionBot.Y + speedBot);
+                    if (panel2.Top < topMoviment || panel2.Top > botMoviment)
+                    {
+                        speedBot = -speedBot;
+                    }
                 }
             }
             if (startBall)
@@ -175,17 +211,17 @@ namespace Pong
             {
                 if (onePLayer)
                 {
-                    message = "CPU WIN THE GAME";
+                    message = "CPU WINS THE GAME";
                 } else
                 {
-                    message = "PLAYER 2 WIN THE GAME";
+                    message = "PLAYER 2 WINS THE GAME";
                 }
 
                 RestartPoints(message);
             }
             else if (pointsPlayer == 5)
             {
-                message = "PLAYER 1 WIN THE GAME";
+                message = "PLAYER 1 WINS THE GAME";
 
                 RestartPoints(message);
             }

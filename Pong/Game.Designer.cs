@@ -38,6 +38,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.PicBoxBall = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PicBoxBall)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +71,7 @@
             this.label1.BackColor = System.Drawing.Color.Black;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(376, 139);
+            this.label1.Location = new System.Drawing.Point(376, 239);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(161, 20);
             this.label1.TabIndex = 4;
@@ -78,22 +80,22 @@
             // marcador1
             // 
             this.marcador1.AutoSize = true;
-            this.marcador1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.marcador1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.marcador1.ForeColor = System.Drawing.Color.White;
-            this.marcador1.Location = new System.Drawing.Point(177, 22);
+            this.marcador1.Location = new System.Drawing.Point(178, 8);
             this.marcador1.Name = "marcador1";
-            this.marcador1.Size = new System.Drawing.Size(29, 31);
+            this.marcador1.Size = new System.Drawing.Size(35, 37);
             this.marcador1.TabIndex = 5;
             this.marcador1.Text = "0";
             // 
             // marcador2
             // 
             this.marcador2.AutoSize = true;
-            this.marcador2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.marcador2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.marcador2.ForeColor = System.Drawing.Color.White;
-            this.marcador2.Location = new System.Drawing.Point(738, 22);
+            this.marcador2.Location = new System.Drawing.Point(684, 8);
             this.marcador2.Name = "marcador2";
-            this.marcador2.Size = new System.Drawing.Size(29, 31);
+            this.marcador2.Size = new System.Drawing.Size(35, 37);
             this.marcador2.TabIndex = 6;
             this.marcador2.Text = "0";
             // 
@@ -124,12 +126,37 @@
             this.PicBoxBall.TabIndex = 3;
             this.PicBoxBall.TabStop = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Black;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(389, 203);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(132, 20);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Press ESC to exit";
+            this.label2.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(381, 103);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(145, 42);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "PAUSE";
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(928, 639);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.PicBoxBall);
             this.Controls.Add(this.label1);
@@ -160,5 +187,7 @@
         private System.Windows.Forms.Label marcador2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

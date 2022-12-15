@@ -10,10 +10,14 @@ using System.Windows.Forms;
 
 namespace Pong
 {
+
+    
+
     public partial class Difficulty : Form
     {
-
+        int imp = 0;
         bool onePlayer;
+       
 
         public Difficulty()
         {
@@ -25,6 +29,8 @@ namespace Pong
             this.onePlayer = onePlayer;
 
             InitializeComponent();
+            button4.Visible = false;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -46,6 +52,27 @@ namespace Pong
             Game game = new Game(3, onePlayer);
             game.Show();
             this.Close();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+ 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Game game = new Game(4, onePlayer);
+            game.Show();
+            this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            imp = imp + 1;
+            if (imp == 3)
+            {
+                button4.Visible = true;
+            }
         }
     }
 }
