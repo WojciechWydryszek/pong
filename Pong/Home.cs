@@ -12,15 +12,15 @@ namespace Pong
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Game form = new Game(true);
-            form.Show();
+            Difficulty difficulty = new Difficulty(true);
+            difficulty.Show();
             this.Hide();
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            Game form = new Game(false);
-            form.Show();
+            Game game = new Game(1, false);
+            game.Show();
             this.Hide();
         }
 
@@ -34,5 +34,6 @@ namespace Pong
             Controls controls = new Controls();
             controls.ShowDialog();
         }
+        
     }
 }

@@ -11,3 +11,4 @@ C:\Users\10030110\Desktop\Pong\Pong\obj\Debug\Pong.Controls.resources
 C:\Users\10030110\Desktop\Pong\Pong\obj\Debug\Pong.Home.resources
 C:\Users\10030110\Desktop\Pong\Pong\obj\Debug\Pong.Game.resources
 C:\Users\10030110\Desktop\Pong\Pong\obj\Debug\Pong.Winner.resources
+C:\Users\10030110\Desktop\Pong\Pong\obj\Debug\Pong.Difficulty.resources

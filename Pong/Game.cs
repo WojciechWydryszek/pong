@@ -17,7 +17,9 @@ namespace Pong
                            pointsPlayer,
                            pointsBot;
 
-        private const int topMoviment = 55,
+        private int difficulty;
+
+        private const int topMoviment = 85,
                           botMoviment = 465;
 
         public Game() // constructor for restart game
@@ -25,24 +27,29 @@ namespace Pong
             InitializeComponent();
             startValues();
         }
-        public Game(bool b) // pass if is game for 1 or 2 players
+        public Game(int difficulty, bool b) // pass if is game for 1 or 2 players
         {
             InitializeComponent();
+            this.difficulty = difficulty;
             onePLayer = b;
             startValues();
         }
 
         private void startValues() // initial values
         {
-            speedBot = 3;
+            if(difficulty == 1)
+                speedBot = 2;
+            else if (difficulty == 2)
+                speedBot = 5;
+            if (difficulty == 3)
+                speedBot = 9;
             ballX = -5;
             ballY = 5;
             pointsPlayer = 0;
             pointsBot = 0;
             startBall = false;
         }
-
-
+       
 
         public class controls
         {
@@ -149,13 +156,15 @@ namespace Pong
 
         private void AddPoint(bool player)
         {
-            PicBoxBall.Left = 434;
+            PicBoxBall.Left = 430;
+            PicBoxBall.Top = 320;
             ballX = -ballX;
             if (player)
                 pointsPlayer++;
             else
                 pointsBot++;
             startBall = false;
+            label1.Visible = true;
             winner();
         }
 

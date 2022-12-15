@@ -89,5 +89,15 @@ namespace Pong.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ski_trail_rating_symbol_black_circle11 {
+            get {
+                object obj = ResourceManager.GetObject("Ski_trail_rating_symbol_black_circle11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
